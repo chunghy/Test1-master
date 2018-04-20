@@ -1,5 +1,6 @@
 package com.example.irmin.test1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -80,16 +81,17 @@ public class Main2Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_EditInfo) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_Ing) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_Pre) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_End) {
 
         } else if (id == R.id.nav_AddEvent) {
-
+            Intent intent = new Intent(Main2Activity.this, Event_Register.class);
+            Main2Activity.this.startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
