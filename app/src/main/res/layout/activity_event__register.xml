@@ -8,12 +8,41 @@
 
 
     <Button
+        android:id="@+id/timer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/Timer"
+        android:layout_marginEnd="69dp"
+        android:onClick="Move_End"
+        android:text="종료시간설정" />
+
+    <TextView
+        android:id="@+id/TimeView_E"
+        android:layout_width="86dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/Timer"
+        android:layout_alignStart="@+id/timer2"
+        android:gravity="center"
+        android:text="" />
+
+    <Button
         android:id="@+id/Timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="127dp"
-        android:onClick="Move"
-        android:text="시간설정" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="75dp"
+        android:layout_marginStart="75dp"
+        android:onClick="Move_Start"
+        android:text="시작시간설정" />
+
+    <TextView
+        android:id="@+id/TimeView_S"
+        android:layout_width="86dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/Timer"
+        android:layout_alignStart="@+id/Timer"
+        android:gravity="center"
+        android:text="" />
 </RelativeLayout>

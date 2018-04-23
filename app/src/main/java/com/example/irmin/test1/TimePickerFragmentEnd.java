@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
+public class TimePickerFragmentEnd extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
 
     Calendar mCalendar = Calendar.getInstance();
     int hour, min ;
@@ -43,9 +43,9 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
             hour_of_12_hour_format = hourOfDay;
         }
         // Get the calling activity TextView reference
-        TextView tv1 = (TextView) getActivity().findViewById(R.id.TimeView_S);
+        TextView tv2 = (TextView) getActivity().findViewById(R.id.TimeView_E);
         // Display the 12 hour format time in app interface
-        tv1.setText(hour_of_12_hour_format + " :" + minute + " " + status);
+        tv2.setText(hour_of_12_hour_format + " :" + minute + " " + status);
 
         Toast.makeText(getActivity(), hourOfDay + "시" + minute+ "분 " + "으로 설정되었습니다", Toast.LENGTH_LONG).show();
     }
