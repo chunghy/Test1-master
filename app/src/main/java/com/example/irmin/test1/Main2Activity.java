@@ -84,13 +84,15 @@ public class Main2Activity extends AppCompatActivity
         if (id == R.id.nav_EditInfo) {
             // Handle the camera action
         } else if (id == R.id.nav_Ing) {
+            Intent intent = new Intent(Main2Activity.this, Progressing_Event.class);
+            Main2Activity.this.startActivity(intent);
 
         } else if (id == R.id.nav_Pre) {
 
         } else if (id == R.id.nav_End) {
 
         } else if (id == R.id.nav_AddEvent) {
-            Intent intent = new Intent(Main2Activity.this, Event_Register.class);
+            Intent intent = new Intent(Main2Activity.this, EventRegisterActivity.class);
             Main2Activity.this.startActivity(intent);
         }
 

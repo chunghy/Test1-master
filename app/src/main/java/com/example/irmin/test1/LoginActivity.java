@@ -71,6 +71,8 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.commit();
                                 Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
                                 intent.putExtra("userID", userID);
+                                Intent intent1 = new Intent(getApplicationContext(), EventRegisterActivity.class);
+                                intent1.putExtra("userID", userID);
                                 LoginActivity.this.startActivity(intent);
                                 finish();
                             }

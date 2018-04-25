@@ -43,7 +43,7 @@ public class TimePickerFragmentEnd extends DialogFragment implements TimePickerD
             hour_of_12_hour_format = hourOfDay;
         }
         // Get the calling activity TextView reference
-        TextView tv2 = (TextView) getActivity().findViewById(R.id.TimeView_E);
+        TextView tv2 = (TextView) getActivity().findViewById(R.id.close_Time);
         // Display the 12 hour format time in app interface
         tv2.setText(hour_of_12_hour_format + " :" + minute + " " + status);
 
