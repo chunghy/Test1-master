@@ -78,7 +78,7 @@ public class EventRegisterActivity extends AppCompatActivity {
                 String eventImg = eventImgText.getText().toString();
 
 
-                if (eventTitle.equals("") || eventContent.equals("") || startTime.equals("") || closeTime.equals("") || eventImg.equals("")) {
+                if (eventTitle.equals("") || eventContent.equals("") || startTime.equals("") || closeTime.equals("")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(EventRegisterActivity.this);
                     dialog = builder.setMessage("빈 칸 없이 입력해주세요.")
                             .setNegativeButton("확인", null)
