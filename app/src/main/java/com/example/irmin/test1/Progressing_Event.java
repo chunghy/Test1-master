@@ -22,7 +22,8 @@ import java.util.HashMap;
 
 public class Progressing_Event extends AppCompatActivity {
 
-    private static final String TAG_RESPONSE = "response";
+    private static final String TAG_JSON="webnautes";
+    private static final String TAG_NUM = "eventNum";
     private static final String TAG_ID = "userID";
     private static final String TAG_TITLE = "eventTitle";
     private static final String TAG_CONTENT = "eventContent";
@@ -43,7 +44,7 @@ public class Progressing_Event extends AppCompatActivity {
         eventList = new ArrayList<>();
 
         GetData task = new GetData();
-        task.execute("http://irmin95.cafe24.com/EventList.php");
+        task.execute("http://irmin95.cafe24.com/EventList2.php");
     }
 
     private class GetData extends AsyncTask<String, Void, String> {
@@ -63,6 +64,9 @@ public class Progressing_Event extends AppCompatActivity {
             super.onPostExecute(result);
 
             progressDialog.dismiss();
+
+            myJSON = result;
+            showList();
         }
 
         @Override
@@ -121,21 +125,24 @@ public class Progressing_Event extends AppCompatActivity {
     protected  void showList(){
         try {
             JSONObject jsonObj = new JSONObject(myJSON);
-            JSONArray ja = jsonObj.getJSONArray(TAG_RESPONSE);
+            JSONArray ja = jsonObj.getJSONArray(TAG_JSON);
 
-            for (int i=1; i < ja.length(); i++){
+            for (int i=0; i < ja.length(); i++){
                 JSONObject c = ja.getJSONObject(i);
 
-                String id = c.getString(TAG_ID);
-                String title = c.getString(TAG_TITLE);
-                String content = c.getString(TAG_CONTENT);
-                String start = c.getString(TAG_START);
-                String close = c.getString(TAG_CLOSE);
-                String amount = c.getString(TAG_AMOUNT);
-                String img =c.getString(TAG_IMG);
+
+                String num = c.optString(TAG_NUM);
+                String id = c.optString(TAG_ID);
+                String title = c.optString(TAG_TITLE);
+                String content = c.optString(TAG_CONTENT);
+                String start = c.optString(TAG_START);
+                String close = c.optString(TAG_CLOSE);
+                String amount = c.optString(TAG_AMOUNT);
+                String img = c.optString(TAG_IMG);
 
                 HashMap<String, String> list = new HashMap<>();
 
+                list.put(TAG_NUM, num);
                 list.put(TAG_ID, id);
                 list.put(TAG_TITLE, title);
                 list.put(TAG_CONTENT, content);

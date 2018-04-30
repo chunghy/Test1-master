@@ -32,6 +32,11 @@ public class EventRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_register);
 
         final TextView loginId = (TextView) findViewById(R.id.loginId);
+
+        SharedPreferences pref = getSharedPreferences("sharedID",MODE_PRIVATE);
+        String user_Id = pref.getString("sharedID","");
+        loginId.setText(user_Id);
+
         final EditText event_title = (EditText) findViewById(R.id.event_title);
         final EditText event_content = (EditText) findViewById(R.id.event_content);
         final TextView start_Time = (TextView) findViewById(R.id.start_Time);
@@ -64,10 +69,6 @@ public class EventRegisterActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                Intent intent = getIntent();
-                String user = intent.getStringExtra("userID");
-                loginId.setText(String.valueOf(user));
 
                 String userID = loginId.getText().toString();
                 String eventTitle = event_title.getText().toString();
